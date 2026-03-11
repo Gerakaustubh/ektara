@@ -36,13 +36,14 @@ export default function Home() {
     "/photos/ld-export-2453f4fd-03302025.JPG",
   ];
 
+
   return (
     <>
       <Head>
         <title>Ektara - Kaustubh Gera</title>
         <meta name="description" content="Photography portfolio of Kaustubh Gera" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
       </Head>
       <div className="bg-black text-white min-h-screen font-inter">
@@ -187,7 +188,7 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
 
       {/* SPECIALTIES */}
@@ -391,7 +392,7 @@ export default function Home() {
 
 )}
 
-
-    </div>
+      </div>
+    </>
   );
 }
