@@ -226,7 +226,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
       <motion.section id="gallery" className="px-6 pb-32" initial={{ opacity:0 }} whileInView={{ opacity:1 }} transition={{ duration:0.8 }} viewport={{ once:true }}>
 
         <motion.h2 
@@ -298,7 +298,7 @@ export default function Home() {
           </p>
           <p className="text-gray-500 mt-6">— Kaustubh Gera</p>
         </motion.div>
-      </section>
+      </motion.section>
 
 
       {/* CONTACT */}
@@ -340,7 +340,7 @@ export default function Home() {
           </div>
         </motion.div>
 
-      </section>
+      </motion.section>
 
 
       {/* FOOTER */}
