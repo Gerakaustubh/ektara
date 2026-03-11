@@ -12,8 +12,14 @@ export default function Home() {
     "/photos/IMG_4548_SnapseedCopy.JPG",
     "/photos/IMG_5064.jpeg",
     "/photos/IMG_5601.JPG",
+    "/photos/IMG_5636.jpeg",
     "/photos/IMG_5788.jpeg",
+    "/photos/IMG_7948.jpeg",
     "/photos/IMG_9706_SnapseedCopy.jpeg",
+    "/photos/FullSizeRender.jpeg",
+    "/photos/IMG_1014_SnapseedCopy.jpg",
+    "/photos/Image.PNG",
+    "/photos/ld-export-2453f4fd-03302025.JPG",
   ];
 
   return (
