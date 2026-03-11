@@ -40,6 +40,10 @@ export default function Home() {
         <span className="hover:text-gray-300 transition">About</span>
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
       </motion.a>
+      <motion.a href="#specialties" className="relative group" whileHover={{ scale: 1.05 }}>
+        <span className="hover:text-gray-300 transition">Specialties</span>
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+      </motion.a>
       <motion.a href="#gallery" className="relative group" whileHover={{ scale: 1.05 }}>
         <span className="hover:text-gray-300 transition">Gallery</span>
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
@@ -150,7 +154,42 @@ export default function Home() {
       </section>
 
 
-      {/* GALLERY */}
+      {/* SPECIALTIES */}
+      <section id="specialties" className="py-32 px-6 bg-gradient-to-r from-black via-gray-900 to-black">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-5xl font-bold text-center mb-16"
+          >
+            What I Specialize In
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { icon: "🏔️", title: "Landscape Photography", desc: "Capturing breathtaking natural beauty and majestic vistas" },
+              { icon: "👥", title: "Candid Moments", desc: "Unscripted, authentic moments that tell real stories" },
+              { icon: "🌃", title: "Street Photography", desc: "Urban exploration through the lens of everyday life" }
+            ].map((spec, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: idx * 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5, backgroundColor: "rgba(255,255,255,0.05)" }}
+                className="p-8 rounded-2xl border border-white/10 transition-all duration-300 cursor-pointer"
+              >
+                <p className="text-5xl mb-4">{spec.icon}</p>
+                <h3 className="text-2xl font-bold mb-3">{spec.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{spec.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
       <section id="gallery" className="px-6 pb-32">
 
         <motion.h2 
@@ -207,7 +246,7 @@ export default function Home() {
 
 
       {/* QUOTE */}
-      <section className="h-[60vh] flex items-center justify-center text-center px-6 relative">
+      <section className="h-[60vh] flex items-center justify-center text-center px-6 relative bg-gradient-to-r from-black via-gray-900 to-black">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -226,7 +265,7 @@ export default function Home() {
 
 
       {/* CONTACT */}
-      <section id="contact" className="py-32 px-6 max-w-3xl mx-auto text-center">
+      <section id="contact" className="py-32 px-6 max-w-3xl mx-auto text-center bg-gradient-to-r from-black via-gray-900 to-black">
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -234,10 +273,14 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl mb-6 font-bold">Let's Connect</h2>
+          <h2 className="text-5xl mb-6 font-bold">Ready to Work Together?</h2>
 
-          <p className="opacity-80 mb-12 text-lg">
-            Interested in collaborations or have a project in mind?
+          <p className="opacity-80 mb-4 text-lg">
+            I'm always excited about new projects and collaborations. Let's create something amazing together.
+          </p>
+
+          <p className="text-gray-500 mb-12">
+            Whether you have a specific project in mind or just want to chat about photography, feel free to reach out!
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -264,10 +307,16 @@ export default function Home() {
 
 
       {/* FOOTER */}
-      <footer className="py-10 text-center opacity-60">
-
-        © {new Date().getFullYear()} Ektara by Kaustubh Gera
-
+      <footer className="py-16 px-6 text-center border-t border-white/10 bg-gradient-to-r from-black via-gray-900 to-black">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <p className="opacity-60 mb-4">© {new Date().getFullYear()} Ektara by Kaustubh Gera</p>
+          <p className="text-gray-600 text-sm">Crafted with passion for authentic storytelling</p>
+        </motion.div>
       </footer>
 
 {selectedImage && (
