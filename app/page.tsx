@@ -96,7 +96,7 @@ export default function Home() {
       transition={{ duration: 1, delay: 0.4 }}
       className="text-lg md:text-xl opacity-80 tracking-wide"
     >
-      by Kaustubh — Capturing stories through light
+      by Kaustubh Gera — Capturing stories through light
     </motion.p>
 
     <motion.div 
@@ -121,12 +121,9 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl mb-6 font-bold">The Photographer</h2>
+            <h2 className="text-5xl mb-6 font-bold">The Visual Storyteller</h2>
             <p className="opacity-80 leading-relaxed text-lg">
-              I'm Kaustubh — a photographer drawn to mountains,
-              quiet streets and fleeting moments. Photography for me
-              is about learning to notice beauty that most people
-              walk past.
+              I'm Kaustubh Gera — a visual storyteller obsessed with capturing raw emotions and unscripted moments. With a keen eye for light and composition, I specialize in bringing stories to life through the lens. From mountain landscapes to candid street photography, I believe every frame has a story waiting to be told. My work is driven by a passion for authentic moments and the beauty found in simplicity.
             </p>
           </motion.div>
           <motion.div
@@ -137,16 +134,16 @@ export default function Home() {
             className="space-y-6"
           >
             <div className="p-6 rounded-lg border border-white/10 hover:border-white/30 transition">
-              <p className="text-3xl font-bold text-white">500+</p>
+              <p className="text-3xl font-bold text-white">1000+</p>
               <p className="text-gray-400 mt-2">Photos Captured</p>
             </div>
             <div className="p-6 rounded-lg border border-white/10 hover:border-white/30 transition">
-              <p className="text-3xl font-bold text-white">10+</p>
-              <p className="text-gray-400 mt-2">Countries Explored</p>
+              <p className="text-3xl font-bold text-white">6y</p>
+              <p className="text-gray-400 mt-2">Photography Journey</p>
             </div>
             <div className="p-6 rounded-lg border border-white/10 hover:border-white/30 transition">
-              <p className="text-3xl font-bold text-white">7y</p>
-              <p className="text-gray-400 mt-2">Photography Journey</p>
+              <p className="text-3xl font-bold text-white">∞</p>
+              <p className="text-gray-400 mt-2">Passion for Stories</p>
             </div>
           </motion.div>
         </div>
@@ -223,7 +220,7 @@ export default function Home() {
             I realised photography was never about the camera —
             it was about learning to see."
           </p>
-          <p className="text-gray-500 mt-6">— Kaustubh</p>
+          <p className="text-gray-500 mt-6">— Kaustubh Gera</p>
         </motion.div>
       </section>
 
@@ -245,7 +242,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a 
-              href="https://instagram.com" 
+              href="https://www.instagram.com/ektarabykaustubh?igsh=dW9uYWRhejBuOWZx&utm_source=qr" 
               target="_blank" 
               rel="noopener noreferrer" 
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
@@ -254,7 +251,7 @@ export default function Home() {
               Instagram
             </motion.a>
             <motion.a 
-              href="mailto:contact@ektara.com" 
+              href="mailto:ektarabykaustubh@gmail.com" 
               whileHover={{ scale: 1.05 }}
               className="px-8 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition text-lg font-medium"
             >
@@ -269,7 +266,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="py-10 text-center opacity-60">
 
-        © {new Date().getFullYear()} Ektara by Kaustubh
+        © {new Date().getFullYear()} Ektara by Kaustubh Gera
 
       </footer>
 
