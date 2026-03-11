@@ -370,7 +370,7 @@ export default function Home() {
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="relative max-h-[90vh] max-w-[90vw] rounded-2xl overflow-hidden"
+      className="relative w-[95vw] h-[95vh] sm:w-[90vw] sm:h-[90vh] md:w-[85vw] md:h-[85vh] lg:w-[80vw] lg:h-[80vh] rounded-xl sm:rounded-2xl overflow-hidden flex items-center justify-center"
       onClick={(e) => e.stopPropagation()}
     >
       <Image
@@ -378,13 +378,13 @@ export default function Home() {
         alt="Full gallery photo"
         width={1200}
         height={1200}
-        className="w-full h-auto"
+        className="w-full h-full object-contain"
       />
       <button
         onClick={() => setSelectedImage(null)}
-        className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 rounded-full p-2 transition"
+        className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-black/50 hover:bg-black/70 rounded-full p-1 sm:p-2 transition"
       >
-        <span className="text-white text-2xl">×</span>
+        <span className="text-white text-xl sm:text-2xl">×</span>
       </button>
     </motion.div>
 
