@@ -1,12 +1,22 @@
 "use client";
 
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const images = [
     "/photos/_DSC2897.jpg",
     "/photos/IMG_4548_SnapseedCopy.JPG",
@@ -23,13 +33,21 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <>
+      <Head>
+        <title>Ektara - Kaustubh Gera</title>
+        <meta name="description" content="Photography portfolio of Kaustubh Gera" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+      </Head>
+      <div className="bg-black text-white min-h-screen font-inter">
       <div
       className="pointer-events-none fixed inset-0 opacity-10 mix-blend-overlay"
       style={{backgroundImage:"url('https://grainy-gradients.vercel.app/noise.svg')"}}
     />
 
-    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black/60 to-black/20 backdrop-blur-md">
+    <nav className={`fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-colors duration-300 ${scrolled ? 'bg-black/70' : 'bg-black/40'}`}>
 
   <div className="max-w-6xl mx-auto flex justify-between items-center p-4 md:p-6">
 
@@ -39,8 +57,16 @@ export default function Home() {
     >
       Ektara
     </motion.h1>
+    {/* mobile menu toggle */}
+    <button
+      className="ml-4 md:hidden text-2xl"
+      onClick={() => setMobileMenu(!mobileMenu)}
+      aria-label="toggle menu"
+    >
+      {mobileMenu ? '✕' : '☰'}
+    </button>
 
-    <div className="flex space-x-8 text-sm">
+    <div className={`flex space-x-8 text-sm ${mobileMenu ? 'flex flex-col absolute top-full left-0 w-full bg-black/80 py-4 md:static md:flex-row md:bg-transparent md:py-0' : 'hidden md:flex'}`}>
 
       <motion.a href="#about" className="relative group" whileHover={{ scale: 1.05 }}>
         <span className="hover:text-gray-300 transition">About</span>
@@ -123,7 +149,7 @@ export default function Home() {
 
 
       {/* ABOUT */}
-      <section id="about" className="py-32 px-6 max-w-4xl mx-auto">
+      <motion.section id="about" className="py-32 px-6 max-w-4xl mx-auto" initial={{ opacity:0 }} whileInView={{ opacity:1 }} transition={{ duration:0.8 }} viewport={{ once:true }}>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -161,7 +187,7 @@ export default function Home() {
 
 
       {/* SPECIALTIES */}
-      <section id="specialties" className="py-32 px-6 bg-gradient-to-r from-black via-gray-900 to-black">
+      <motion.section id="specialties" className="py-32 px-6 bg-gradient-to-r from-black via-gray-900 to-black" initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} transition={{ duration:0.8 }} viewport={{ once:true }}>
         <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -196,7 +222,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="gallery" className="px-6 pb-32">
+      <motion.section id="gallery" className="px-6 pb-32" initial={{ opacity:0 }} whileInView={{ opacity:1 }} transition={{ duration:0.8 }} viewport={{ once:true }}>
 
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -248,11 +274,11 @@ export default function Home() {
 
         </div>
 
-      </section>
+      </motion.section>
 
 
       {/* QUOTE */}
-      <section className="h-[60vh] flex items-center justify-center text-center px-6 relative bg-gradient-to-r from-black via-gray-900 to-black">
+      <motion.section className="h-[60vh] flex items-center justify-center text-center px-6 relative bg-gradient-to-r from-black via-gray-900 to-black" initial={{ opacity:0 }} whileInView={{ opacity:1 }} transition={{ duration:0.8 }} viewport={{ once:true }}>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -271,7 +297,7 @@ export default function Home() {
 
 
       {/* CONTACT */}
-      <section id="contact" className="py-32 px-6 max-w-3xl mx-auto text-center bg-gradient-to-r from-black via-gray-900 to-black">
+      <motion.section id="contact" className="py-32 px-6 max-w-3xl mx-auto text-center bg-gradient-to-r from-black via-gray-900 to-black" initial={{ opacity:0 }} whileInView={{ opacity:1 }} transition={{ duration:0.8 }} viewport={{ once:true }}>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
