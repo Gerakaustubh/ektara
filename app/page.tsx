@@ -17,6 +17,10 @@ export default function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const images = [
     "/photos/_DSC2897.jpg",
     "/photos/IMG_4548_SnapseedCopy.JPG",
@@ -51,7 +55,7 @@ export default function Home() {
 
   <div className="max-w-6xl mx-auto flex justify-between items-center p-4 md:p-6">
 
-    <motion.h1 
+    <motion.h1
       className="text-xl font-bold tracking-wider"
       whileHover={{ scale: 1.05 }}
     >
@@ -59,28 +63,28 @@ export default function Home() {
     </motion.h1>
     {/* mobile menu toggle */}
     <button
-      className="ml-4 md:hidden text-2xl"
+      className="ml-4 md:hidden text-2xl focus:outline-none"
       onClick={() => setMobileMenu(!mobileMenu)}
       aria-label="toggle menu"
     >
       {mobileMenu ? '✕' : '☰'}
     </button>
 
-    <div className={`flex space-x-8 text-sm ${mobileMenu ? 'flex flex-col absolute top-full left-0 w-full bg-black/80 py-4 md:static md:flex-row md:bg-transparent md:py-0' : 'hidden md:flex'}`}>
+    <div className={`flex space-x-8 text-sm ${mobileMenu ? 'flex flex-col absolute top-full left-0 w-full bg-black/90 py-6 px-4 space-y-4 md:static md:flex-row md:bg-transparent md:py-0 md:px-0 md:space-y-0' : 'hidden md:flex'}`}>
 
-      <motion.a href="#about" className="relative group" whileHover={{ scale: 1.05 }}>
+      <motion.a href="#about" className="relative group py-2 md:py-0" whileHover={{ scale: 1.05 }}>
         <span className="hover:text-gray-300 transition">About</span>
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
       </motion.a>
-      <motion.a href="#specialties" className="relative group" whileHover={{ scale: 1.05 }}>
+      <motion.a href="#specialties" className="relative group py-2 md:py-0" whileHover={{ scale: 1.05 }}>
         <span className="hover:text-gray-300 transition">Specialties</span>
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
       </motion.a>
-      <motion.a href="#gallery" className="relative group" whileHover={{ scale: 1.05 }}>
+      <motion.a href="#gallery" className="relative group py-2 md:py-0" whileHover={{ scale: 1.05 }}>
         <span className="hover:text-gray-300 transition">Gallery</span>
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
       </motion.a>
-      <motion.a href="#contact" className="relative group" whileHover={{ scale: 1.05 }}>
+      <motion.a href="#contact" className="relative group py-2 md:py-0" whileHover={{ scale: 1.05 }}>
         <span className="hover:text-gray-300 transition">Contact</span>
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
       </motion.a>
